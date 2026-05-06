@@ -15,10 +15,10 @@ const port = process.env.PORT;
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
-server.use("/api", authRoutes)
+server.use("/", authRoutes)
 server.use("/images", express.static(path.join(__dirname, "public/images")));
 connectDB();
-server.get("/api", async(req, res) => {
+server.get("/", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
         console.log("Error ",err)
     });
@@ -28,7 +28,7 @@ server.post("/api", (req, res) => {
     console.log("my server")
 });
 
-server.get("/api/trends", async (req, res) => {
+server.get("/trends", async (req, res) => {
   const { q } = req.query;
 
   if (!q) {
