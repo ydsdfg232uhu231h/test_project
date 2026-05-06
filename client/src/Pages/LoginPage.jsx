@@ -53,7 +53,7 @@ export default function LoginPage() {
                 
             }
             seterror(null);
-            const response = await fetch('http://localhost:4000/account/login', {
+            const response = await fetch('http://localhost:3000/api/account/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
