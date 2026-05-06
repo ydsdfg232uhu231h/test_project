@@ -16,7 +16,7 @@ server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use("/api", authRoutes)
-server.use("/api/images", express.static(path.join(__dirname, "public/images")));
+server.use("/images", express.static(path.join(__dirname, "public/images")));
 connectDB();
 server.get("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
