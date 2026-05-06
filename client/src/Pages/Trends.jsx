@@ -26,7 +26,7 @@ export default function Trends() {
 
         try {
             // Replace with your actual proxy backend URL
-            const response = await fetch(`http://localhost:5000/api/trends?q=${encodeURIComponent(query)}`);
+            const response = await fetch(`http://localhost:3000/trends?q=${encodeURIComponent(query)}`);
             const data = await response.json();
 
             // Format data for Chart.js
