@@ -1,0 +1,38 @@
+#mysearch{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;    
+    margin-bottom: 18px;
+}
+#mysearch li a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100vw;
+}
+#mysearch li:hover{
+    background-color:aquamarine;
+    cursor: pointer;
+}
+#mysearch li img{
+    width: 240px;
+    height: 250px;
+    margin-right: 100px;
+}
+#mysearch li:hover  img{
+    box-shadow: 0 0 25px black;
+}
+#mysearch li div h2{
+    color: black;
+}
+#mysearch li div{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}

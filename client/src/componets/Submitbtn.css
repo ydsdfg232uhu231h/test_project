@@ -1,0 +1,13 @@
+#Submit{
+    padding: 30px;
+    font-size: 32px;
+    display: flex;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(9, 48, 223, 0.781);
+    border: 3px solid rgb(7, 28, 221);
+}
+#Submit:hover, #LoginB:active{
+    background-color: yellowgreen;
+}

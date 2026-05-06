@@ -1,0 +1,103 @@
+input.Sender {
+    display: flex;
+    align-items: baseline;
+    width: 20px;
+    height: 20px;
+}
+
+.box1 {
+    margin: auto;
+    height: auto; /* changed from 100vh */
+}
+
+.box2 {
+    height: auto; /* changed from 100% */
+}
+
+input {
+    background-color: #c3e0e2;
+}
+
+form {
+    padding-bottom: 5px; /* reduced height */
+    text-align: center;
+}
+
+.Gender {
+    display: flex;
+    flex-direction: row;
+}
+
+.Gender label {
+    margin-top: 0px; /* reduced spacing */
+    margin-left: 5px;
+}
+
+.gender {
+    width: 20px;
+    height: 20px;
+}
+
+#SiginSubmit {
+    padding: 10px 20px; /* reduced from 30px */
+    font-size: 20px; /* slightly reduced */
+    display: flex;
+    border-radius: 30px;
+    height: auto; /* removed fixed height */
+    font-weight: bold;
+    color: white;
+    background-color: rgba(9, 48, 223, 0.781);
+    border: 3px solid rgb(7, 28, 221);
+}
+
+#SignSubmit:hover {
+    background-color: green;
+}
+
+.block {
+    display: block;
+}
+
+.control label {
+    display: block;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.control input {
+    display: block;
+    width: 50%; /* unchanged */
+    min-width: 50px;
+    max-width: 15rem;
+    padding: 0.3rem; /* reduced height */
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #a5bcbe;
+    background-color: #a5bcbe;
+    color: #142020;
+}
+
+#SignB {
+    color: blue;
+}
+
+#SignB:visited {
+    color: blueviolet;
+}
+
+#termsagree {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
+
+#agreesarea {
+    display: flex;
+    align-items: center;
+}
+
+#role {
+    max-width: 400px;
+}

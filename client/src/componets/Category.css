@@ -1,0 +1,30 @@
+#categaries{
+     background: linear-gradient(135deg, #e3f2fd, #e0ecff);
+    color: black;
+    width: 100vw;
+    height: 60px;
+    cursor: pointer;
+    z-index: 8000;
+  }
+  #categaries ol{
+    display: flex;
+    align-items: flex-start;
+    justify-content: baseline;
+    overflow: scroll;
+    
+    padding: 10px;
+  }
+  #categaries ol li{
+    padding: 10px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    width: auto;
+    margin: 0 10px;
+  }
+  #categaries ol li.activecategary{
+    border-radius: 10px;
+    color: white  ;
+    
+    background-color: rgb(1, 39, 54);
+    
+  }

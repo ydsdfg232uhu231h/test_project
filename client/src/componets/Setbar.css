@@ -1,0 +1,97 @@
+#setbar {
+    background-color: white;
+    position: fixed;
+    top: 70px; /* Adjusted to give room for the arrow */
+    right: 20px;
+    width: 220px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* Combined your radius logic into one shorthand */
+    border-radius: 20px 0 20px 20px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    overflow: hidden; /* Ensures hover colors don't bleed past rounded corners */
+    z-index: 1000;
+}
+
+#setbar ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#setbar ol li {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    display: flex;
+    padding-left: 20px;
+    transition: all 0.2s ease; /* Makes hover feel smooth */
+    cursor: pointer;
+}
+#theme{
+    height: 10px;
+}
+#setbar ol li:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+#setbar ol li a {
+    font-size: 18px; /* Slightly smaller for better hierarchy */
+    color: #333;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+#setbar ol li:hover a {
+    color: white;
+}
+#setbar ol li:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+/* Arrow/Triangle Pointer */
+#squarebox {
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 63px; /* Positions it perfectly between icon and menu */
+    right: 28px;
+    transform: rotate(45deg);
+    z-index: 999;
+}
+
+/* Special Item Colors */
+.red {
+    color: #ff4d4d !important;
+}
+.red:hover {
+    background-color: #ff4d4d !important;
+    color: white !important;
+}
+
+.green {
+    color: #2ecc71 !important;
+}
+.green:hover {
+    background-color: #2ecc71 !important;
+    color: white !important;
+}
+
+/* Fix for the Emoji Icon */
+.mybar {
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    transition: transform 0.2s;
+}
+
+.mybar:hover {
+    transform: scale(1.1);
+}

@@ -1,30 +1,55 @@
-import express from "express";
-import path from "path";
-import { fileURLToPath } from "url";
 
-const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const express = require('express');
+const dotenv = require("dotenv");
+dotenv.config();
+const cors = require('cors');
+const path = require('path');
+const { readFile } = require("fs/promises");
+const authRoutes = require('./routes/authRoutes');
+const {connectDB} = require('./db/db');
+const googleTrends = require("google-trends-api");
 
-// ✅ Correct absolute path
-const buildPath = path.join(__dirname, "client", "build");
-
-// Debug log (important)
-console.log("Serving from:", buildPath);
-
-// Serve static
-app.use(express.static(buildPath));
-
-// API route
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Backend working ✅" });
+const server = express();
+const port = process.env.PORT;
+server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded({extended: false}));
+server.use("/", authRoutes)
+server.use("/images", express.static(path.join(__dirname, "public/images")));
+connectDB();
+server.get("/", async(req, res) => {
+    const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
+        console.log("Error ",err)
+    });
+    res.json(JSON.parse(products))
+});
+server.post("/", (req, res) => {
+    console.log("my server")
 });
 
-// Catch-all
-app.use((req, res) => {
-  res.sendFile(path.join(buildPath, "index.html"));
+server.get("/api/trends", async (req, res) => {
+  const { q } = req.query;
+
+  if (!q) {
+    return res.status(400).json({ error: "Query is required" });
+  }
+
+  try {
+    const results = await googleTrends.interestOverTime({
+      keyword: q,
+      startTime: new Date(Date.now() - 5 * 365 * 24 * 60 * 60 * 1000), // 5 years
+    });
+
+    const parsed = JSON.parse(results);
+    res.json(parsed.default); // IMPORTANT
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to fetch trends" });
+  }
 });
 
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+server.listen(port, () => {
+    console.log('Server connected successfully at http://localhost:' + port);
+
+});

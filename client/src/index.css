@@ -1,13 +1,185 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #336fa3, #74eef5) ;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+ul,ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 100vw;
+  height: auto;
+}
+*::-webkit-scrollbar{
+  display: none;
+}
+
+.control,
+fieldset {
+  margin-bottom: 1rem;
+}
+
+.control.no-margin {
+  margin-bottom: 0;
+}
+
+.control label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.control input {
+  display: block;
+  width: 100%;
+  max-width: fit-content;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #758a8a;
+  background-color: #869999;
+  color: #142020;
+}
+
+.control select {
+  display: block;
+  width: 100%;
+  height: 50px;
+  max-width: 38rem;
+  padding: 0.5rem;
+  font-size: 1.9rem;
+  border-radius: 4px;
+  border: 1px solid #758a8a;
+  background-color: #d1f1f1;
+  color: #142020;
+}
+
+.control:has(input[type='checkbox']) {
+  display: flex;
+  align-items: center;
+}
+
+.control:has(input[type='checkbox']) label {
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.control input[type='checkbox'] {
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  color: #d9e2f1;
+}
+
+.control-error {
+  color: #ffca99;
+  font-size: 0.8rem;
+  height: 2rem;
+  padding: 0.5rem 0;
+}
+
+.control-error p {
+  margin: 0;
+  text-align: left;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+
+
+/* Inputs & Selects adapt to screen */
+.control input,
+.control select {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Control row wraps nicely */
+.control-row {
+  width: 100%;
+}
+
+/* ---------- TABLET (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  .control-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .control label {
+    font-size: 0.75rem;
+  }
+
+  .control select {
+    font-size: 1.2rem;
+    height: 45px;
+  }
+}
+
+
+@media (max-width: 100px) {
+  body {
+    padding: 0;
+  }
+
+
+  .control label {
+    font-size: 0.7rem;
+  }
+
+  .control input {
+    font-size: 0.9rem;
+    padding: 0.45rem;
+  }
+
+  .control select {
+    font-size: 1rem;
+    height: 40px;
+    padding: 0.4rem;
+  }
+
+  .control-error {
+    font-size: 0.7rem;
+  }
 }

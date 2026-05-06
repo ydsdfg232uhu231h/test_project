@@ -1,0 +1,15 @@
+#validation {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 450px;
+    height: fit-content;
+    color: brown;
+    max-width: 400px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    border: 5px solid rgb(223, 73, 73);
+    font-size: 25px;
+    background-color: rgb(224, 199, 199);
+}
