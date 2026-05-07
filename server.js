@@ -12,13 +12,7 @@ const googleTrends = require("google-trends-api");
 
 const server = express();
 const port = process.env.PORT;
-const corsOptions = {
-  // Replace with your actual Render frontend URL
-  origin: localhost:3000 || 'https://test-project-gobd.onrender.com', 
-  optionsSuccessStatus: 200
-};
 
-server.use(cors(corsOptions));
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
