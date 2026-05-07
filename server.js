@@ -18,7 +18,7 @@ server.use(express.urlencoded({extended: false}));
 server.use("/", authRoutes)
 server.use("/images", express.static(path.join(__dirname, "public/images")));
 connectDB();
-server.get("/", async(req, res) => {
+server.get("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
         console.log("Error ",err)
     });
