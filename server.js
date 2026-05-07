@@ -43,9 +43,17 @@ server.get("/api/trends", async (req, res) => {
       keyword: q,
       startTime: new Date(Date.now() - 5 * 365 * 24 * 60 * 60 * 1000), // 5 years
     });
+    try{
+      const parsed = JSON.parse(results);
+      res.json(parsed.default); // IMPORTANT
+      
+    }
+    catch(errors){
+                  console.log("Google returned HTML instead of JSON");
 
-    const parsed = JSON.parse(results);
-    res.json(parsed.default); // IMPORTANT
+      res.status(500).json({error: "Google block the request"})
+
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Failed to fetch trends" });
