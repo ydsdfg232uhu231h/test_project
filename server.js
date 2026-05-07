@@ -48,6 +48,9 @@ server.get("/api/trends", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch trends" });
   }
 });
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 server.listen(port, () => {
     console.log('Server connected successfully at http://localhost:' + port);
