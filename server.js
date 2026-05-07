@@ -48,7 +48,7 @@ server.get("/api/trends", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch trends" });
   }
 });
-server.get('*', (req, res) => {
+server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'public','index.html'));
 });
 
