@@ -2,7 +2,7 @@
 async function useHomeloader() {
 
             try {
-                const response = await fetch("http://localhost:3000/api", {
+                const response = await fetch("http://localhost:3000/api/", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
