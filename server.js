@@ -12,6 +12,13 @@ const googleTrends = require("google-trends-api");
 
 const server = express();
 const port = process.env.PORT;
+const corsOptions = {
+  // Replace with your actual Render frontend URL
+  origin: localhost:3000 || 'https://onrender.com', 
+  optionsSuccessStatus: 200
+};
+
+server.use(cors(corsOptions));
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
@@ -48,9 +55,7 @@ server.get("/api/trends", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch trends" });
   }
 });
-server.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'public','index.html'));
-});
+
 
 server.listen(port, () => {
     console.log('Server connected successfully at http://localhost:' + port);
