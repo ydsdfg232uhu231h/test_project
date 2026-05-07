@@ -12,7 +12,7 @@ const googleTrends = require("google-trends-api");
 
 const server = express();
 const port = process.env.PORT;
-
+server.use(express.static(path.join(__dirname, "client/build")));
 server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
@@ -21,8 +21,10 @@ server.use("/images", express.static(path.join(__dirname, "public/images")));
 connectDB();
 server.get("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
-        console.log("Error ",err)
+        console.log("Error ",err);
+        
     });
+    
     res.json(JSON.parse(products))
 });
 server.post("/api", (req, res) => {
@@ -49,6 +51,7 @@ server.get("/api/trends", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch trends" });
   }
 });
+
 
 
 server.listen(port, () => {
