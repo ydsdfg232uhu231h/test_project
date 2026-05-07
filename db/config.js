@@ -7,7 +7,7 @@ const config = {
     ssl: {
         rejectUnauthorized: false
     },
-    connectTimeout: 60000,
+    connectTimeout: 6000000,
 };
 
 module.exports = config;
