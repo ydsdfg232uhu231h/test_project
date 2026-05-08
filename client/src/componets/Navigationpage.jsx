@@ -36,7 +36,7 @@ export default function Navigationpage(){
             <ul>
                 <li><h1 onClick={handlenav}>UpTrends</h1></li>
                 <li> {locate.pathname !== "/trends" && <Searchbar/>} </li>
-                <li><NavLink className={({isActive}) => (isActive? 'active': "")} to={'/'} end>Home</NavLink></li>
+                <li><NavLink className={({isActive}) => (isActive? 'active': "")} to={'/home'} end>Home</NavLink></li>
                 <li><NavLink  className={({isActive}) => (isActive? 'active': "")} to={'/trends'} >Trends</NavLink></li>
                 {isauth && <li> <div id="mybar">
                         <h2 onClick={handlemybar}>&#128100;</h2>
