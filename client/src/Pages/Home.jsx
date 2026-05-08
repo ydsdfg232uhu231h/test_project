@@ -9,6 +9,7 @@ import reducer from '../componets/Reducer';
 import NoAuthanticated from './NoAuthanticated';
 
 export default function Home() {
+    localStorage.clear();
 
     const DATA = useRouteLoaderData('root');
     const newcategories = useMemo(()=>{
@@ -19,7 +20,6 @@ export default function Home() {
     const [state, dispatch] = React.useReducer(reducer, { category: DATA || [], filtered: DATA || [] });
     const savetoken = localStorage?.getItem('token');
        //  i have to make a page for not authanticated
-       localStorage.clear();
     return (<>
         {savetoken? <div id='homecontainer'>
 
