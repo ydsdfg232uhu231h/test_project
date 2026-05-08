@@ -23,7 +23,7 @@ export default function Navigationpage(){
     const navigation = useNavigation();
     const navigate = useNavigate();
     function handlenav(){
-        navigate("/");
+        navigate("/home");
     }
     function handlemybar(){
         setaccountisclicked(!accountisclick);
