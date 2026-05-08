@@ -25,7 +25,7 @@ export default function LoginPage() {
 
     function Navhome() {
                     const timer = setTimeout(() => {
-                        return navigate("/");
+                        return navigate("/home");
                     }, 3000);
                    return ()=>clearTimeout(timer);
     }
