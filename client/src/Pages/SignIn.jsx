@@ -17,7 +17,7 @@ export default function SignIn() {
  
   function Navhone() {
     const timer = setTimeout(() => {
-      navigate("/");
+      navigate("/home");
     }, 3000);
     setissignsuccess(true);
     return () => {
