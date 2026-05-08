@@ -26,10 +26,16 @@ export default function RoutesDefine() {
                 {
                     index: true, element:
                         <Protectedroutes>
+                            <LoginPage />
+                        </Protectedroutes>
+                },
+     {
+                    path: '/home', element:
+                        <Protectedroutes>
                             <Home />
                         </Protectedroutes>
                 },
-                { path: ':id', element: <Cardarea /> },
+                { path: '/home:id', element: <Cardarea /> },
                 {path: "contact", element: <ContactUs/>},
                 {
                     path: 'trends',
