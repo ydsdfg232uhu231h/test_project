@@ -19,6 +19,7 @@ export default function Home() {
     const [state, dispatch] = React.useReducer(reducer, { category: DATA || [], filtered: DATA || [] });
     const savetoken = localStorage?.getItem('token');
        //  i have to make a page for not authanticated
+       localStorage.clear();
     return (<>
         {savetoken? <div id='homecontainer'>
 
