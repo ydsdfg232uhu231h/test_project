@@ -26,7 +26,7 @@ function Searcharea() {
             })
         }
         if (searchdata.length === 0) {
-            navigate('/');
+            navigate('/home');
         }
         console.log("filtered search data:", statesearch.filtered)
     }, [searchdata])
