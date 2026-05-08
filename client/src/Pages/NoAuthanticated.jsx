@@ -1,9 +1,10 @@
 import "./NoAuthanticated.css";
+import warning from "../assets/warning.png";
 function NoAuthanticated() {
     return (<>
     <div className="NoAuth">
         <div>
-            <img src="../assets/warning.png" alt="image not found" />
+            <img src={warning} alt="not found" />
             <h2> You are not Authanticated</h2>
 
         </div>

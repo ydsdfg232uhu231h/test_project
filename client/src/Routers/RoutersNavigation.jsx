@@ -23,13 +23,7 @@ export default function RoutesDefine() {
             HydrateFallback: Loading,
             errorElement: <ErrorPage />,
             children: [
-                {
-                    index: true, element:
-                        <Protectedroutes>
-                            <LoginPage />
-                        </Protectedroutes>
-                },
-     {
+               {
                     path: '/home', element:
                         <Protectedroutes>
                             <Home />
