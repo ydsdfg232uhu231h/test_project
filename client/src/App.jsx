@@ -10,6 +10,7 @@ export const ProductContext = createContext({
 
 
 export default function App(){
+
   const [data, setdata] = useState([]);
   return (<>
   <ProductContext.Provider value={{data, setdata}}>

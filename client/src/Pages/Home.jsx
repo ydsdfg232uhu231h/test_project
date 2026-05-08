@@ -9,7 +9,7 @@ import reducer from '../componets/Reducer';
 import NoAuthanticated from './NoAuthanticated';
 
 export default function Home() {
-    localStorage.clear();
+    
 
     const DATA = useRouteLoaderData('root');
     const newcategories = useMemo(()=>{
