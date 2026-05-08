@@ -16,12 +16,12 @@ export default function SignIn() {
   const navigate = useNavigate();
  
   function Navhone() {
-    const timer = setInterval(() => {
+    const timer = setTimeout(() => {
       navigate("/");
     }, 3000);
     setissignsuccess(true);
     return () => {
-      clearInterval(timer);
+      clearTimeout(timer);
     }
   }
 
