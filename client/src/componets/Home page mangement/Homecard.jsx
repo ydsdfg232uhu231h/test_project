@@ -9,7 +9,7 @@ function Homecard({id,image, name }) {
   return (
     <div id='card'>
       <img src={image} alt="the image not found" />
-        <Link to={`/${id}`} id='cardhover'>
+        <Link to={`/home/${id}`} id='cardhover'>
           <h1>{name}</h1>
         </Link>
     </div>
