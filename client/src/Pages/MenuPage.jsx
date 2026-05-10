@@ -17,7 +17,7 @@ export default function MenuPage(){
     return (<>
         <ul id="ulmenu">
             <li><Searchbar/></li>
-            <li><Link to={'/'}>Home</Link></li>
+            <li><Link to={'/home'}>Home</Link></li>
             <li><Link to={'/trends'}>Trends</Link></li>
             <li><Link to={"/profile"}>Profile</Link></li>
             {isauth? <li><Link to={"/logout"}>Logout</Link></li>

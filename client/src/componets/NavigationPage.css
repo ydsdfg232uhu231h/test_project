@@ -106,13 +106,14 @@ header a.active {
 }
 
 
-a.menu{
-  color: black !important;
+#menu{
+  
+  color: #173f4e;
   display: none;
   margin-right: 10px;
   
 }
-.menu:hover, .menu:active{
+#menu:hover, #menu:active{
   color: aqua;
 }  
 @media (max-width: 1000px ) {
@@ -128,7 +129,7 @@ a.menu{
       color: black;
     }
     #ulmenu li:hover{
-      background-color: azure;
+      background-color: rgb(157, 233, 233);
     }
     header ul li:last-child, #menu {
       display: block;
