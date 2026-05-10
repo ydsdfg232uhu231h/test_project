@@ -16,7 +16,6 @@ export default function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form); // later connect to backend
     setmessage(`We have successfully received your message.`)
     setForm({ name: "", email: "", message: "" });
   };

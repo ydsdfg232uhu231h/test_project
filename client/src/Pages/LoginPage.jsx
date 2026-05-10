@@ -35,11 +35,9 @@ export default function LoginPage() {
         const loginformdata = new FormData(event.target);
         const data = Object.fromEntries(loginformdata.entries());
         setformerr({ email: false, password: false })
-        console.log('data:', data);
         try {
                 
             if (data.email.length === 0 || data.password.length === 0) {
-                console.log('email', data.email.length, "\n Password", data.password.length);
                 if (data.email.length === 0 && data.password.length === 0) {
                     return setformerr({ email: true, password: true })
                 }
@@ -53,7 +51,7 @@ export default function LoginPage() {
                 
             }
             seterror(null);
-            const response = await fetch('http://localhost:3000/api/account/login', {
+            const response = await fetch('https://test-project-gobd.onrender.com/api/account/login', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -61,7 +59,6 @@ export default function LoginPage() {
                 body: JSON.stringify({ email: data.email, password: data.password }),
             });
             const dataresponse = await response.json();
-            console.log(dataresponse)
             if (!response.ok) {
                 throw new Error(JSON.stringify(dataresponse));
             }
@@ -81,9 +78,15 @@ export default function LoginPage() {
 
 
         } catch (myerrors) {
-
-            console.log('Error: ', myerrors.message);
             const jsonerror = JSON.parse(myerrors.message);
+            console.log(jsonerror)
+            if (jsonerror.error === "Invalid credentials") {
+                
+                console.log("You have entered wrong details");
+            }
+            else{
+                console.log('Error: ', myerrors.message);
+            }
             seterror(jsonerror);
 
 

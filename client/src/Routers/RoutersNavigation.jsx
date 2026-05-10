@@ -14,6 +14,7 @@ import Protectedroutes from './Protectedroutes';
 import Logout from '../componets/Logout';
 import Profilepage from '../Pages/Profilepage';
 import ContactUs from '../componets/Contect';
+import Welocomepage from "../componets/Welcomepage.jsx"
 export default function RoutesDefine() {
     const route = createBrowserRouter([
         {
@@ -23,25 +24,27 @@ export default function RoutesDefine() {
             HydrateFallback: Loading,
             errorElement: <ErrorPage />,
             children: [
+                {index: true, element: <Welocomepage/>},
                {
                     path: '/home', element:
                         <Protectedroutes>
                             <Home />
                         </Protectedroutes>
                 },
-                { path: '/home:id', element: <Cardarea /> },
-                {path: "contact", element: <ContactUs/>},
+                { path: '/home/:id', element: <Cardarea /> },
+                {path: "/contact", element: <ContactUs/>},
+                {path: "/profile", element: <Profilepage/>},
                 {
-                    path: 'trends',
+                    path: '/trends',
                     element:
                         <Protectedroutes>
                             <Trends />
                         </Protectedroutes>
                 },
-                { path: 'menu', element: <MenuPage /> },
-                { path: 'logout', element: <Logout /> },
+                { path: '/menu', element: <MenuPage /> },
+                { path: '/logout', element: <Logout /> },
                 {
-                    path: 'search',
+                    path: '/search',
                     children: [
                         {
                             index: true,
@@ -60,8 +63,8 @@ export default function RoutesDefine() {
                                 <Profilepage/>
                             </Protectedroutes>
                          },
-                        { path: 'login', element: <LoginPage /> },
-                        { path: 'sign', element: <SignIn /> },
+                        { path: '/account/login', element: <LoginPage /> },
+                        { path: '/account/sign', element: <SignIn /> },
                     ]
                 },
                 { path: "*", element: <Loading /> }

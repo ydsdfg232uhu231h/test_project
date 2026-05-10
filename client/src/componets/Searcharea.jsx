@@ -11,11 +11,9 @@ function Searcharea() {
     const DATAs = useContext(ProductContext);
     const savetoken = localStorage?.getItem("token");
     const searchdata = DATAs.data;
-    console.log("My search data is here" ,searchdata)
     const categories = useMemo(()=>{
         return ["All",...new Set(searchdata?.map((catdata) => catdata.category))];
-    },[DATAs]);
-    console.log("categories data ", categories)
+    },[]);
     const navigate = useNavigate();
      // no useage here
     React.useEffect(() => {
@@ -28,7 +26,6 @@ function Searcharea() {
         if (searchdata.length === 0) {
             navigate('/home');
         }
-        console.log("filtered search data:", statesearch.filtered)
     }, [searchdata])
 
     return (

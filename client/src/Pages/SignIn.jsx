@@ -44,7 +44,7 @@ export default function SignIn() {
       const validerror = validationpassword(payload);
       seterrordata({ firstname: validerror.firstnames, lastname: validerror.lastnames, email: validerror.emails, password: validerror.passwords,confirmpassword: validerror.confirmpasswords, gender: validerror.genders, role: validerror.roles, phone: validerror.phones, termsagree: validerror.termsagrees });
       
-      const response = await fetch("http://localhost:3000/api/account/sign", {
+      const response = await fetch("https://test-project-gobd.onrender.com/api/account/sign", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,7 +67,16 @@ export default function SignIn() {
       }
       console.log(datares);
       } catch (error) {
-      console.log('error:', error);
+        const jsonerror = JSON.parse(error.message);
+        if (jsonerror === "Invalid credentials") {
+                
+                console.log("You have entered wrong details");
+            }
+            else{
+                console.log('Error: ', error.message);
+            }
+            seterror(jsonerror);
+      
 
     }
   }

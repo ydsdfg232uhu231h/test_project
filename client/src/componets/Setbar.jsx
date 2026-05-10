@@ -6,7 +6,6 @@ function Setbar() {
    const [isauth,setauth] = React.useState(true);
    const userdata = JSON.parse(localStorage?.getItem('usersdata'));
     const savetoken = localStorage?.getItem('token');
-    console.log(savetoken);
     const timerrefs = React.useRef(null);
     const [visibility, setvisibility] = React.useState(true);
     React.useEffect(()=>{

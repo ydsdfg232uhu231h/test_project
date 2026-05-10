@@ -4,14 +4,13 @@ import RatingSystem from "./Design for website/Star";
 // import Formater from "./Util/Formater";
 function Cardarea() {
     const { id } = useParams();
-    console.log(id);
+    // card id
     const carddata = useRouteLoaderData('root');
+    console.log(carddata)
     function finddata(prodid) {
         return prodid.id === id;
     }
     const productdata = carddata[carddata.findIndex(finddata)];
-
-    console.log(productdata);
     function handleopenflipkartlinklink(){
         window.open(productdata?.flipkartlink);
     }

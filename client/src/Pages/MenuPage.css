@@ -3,10 +3,14 @@
     flex-direction: column;
    justify-content: baseline !important;
    align-items: center;
-   background-color: blanchedalmond;
+   background-color: white;
+   color: black;
    width: 100%;
    height: 100%;
     
+}
+#ulmenu:hover{
+    color: aqua;
 }
 #ulmenu li{
 

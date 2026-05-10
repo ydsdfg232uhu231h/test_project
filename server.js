@@ -64,6 +64,6 @@ server.get("/api/trends", async (req, res) => {
 
 
 server.listen(port, () => {
-    console.log('Server connected successfully at http://localhost:' + port);
+    console.log('Server connected successfully at https://test-project-gobd.onrender.com');
 
 });

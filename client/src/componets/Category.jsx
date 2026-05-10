@@ -6,7 +6,6 @@ import React from "react";
 function Category({ Category, dispatch }) {
     const [active, setactive] = React.useState("All");
     let categorys = Category; 
-    console.log(categorys)
 
     function activelimage(id) {
         setactive(id)

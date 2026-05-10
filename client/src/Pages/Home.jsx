@@ -16,7 +16,7 @@ export default function Home() {
         return ["All" ,...new Set(DATA.map((catdata)=> catdata.category))];
     },
     [DATA]);
-    const Ncategories = newcategories.sort();
+    const Nategories = newcategories.sort();
     const [state, dispatch] = React.useReducer(reducer, { category: DATA || [], filtered: DATA || [] });
     const savetoken = localStorage?.getItem('token');
        //  i have to make a page for not authanticated
@@ -27,7 +27,7 @@ export default function Home() {
                      <div>
                         <React.Suspense fallback={<Loading />}>
                             <Await resolve={state.filtered}>
-                                        <Category dispatch={dispatch} Category = {Ncategories} />
+                                        <Category dispatch={dispatch} Category = {Nategories} />
                                         <Typinganime />
                                         <div className='homemanagescard'>
                                         <Homecardmanagement mydata={state.filtered} />

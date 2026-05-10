@@ -42,7 +42,7 @@ export default function Navigationpage(){
                         <h2 onClick={handlemybar}>&#128100;</h2>
                         {accountisclick? <Setbar/> : ""}
                     </div>    </li>}
-                <li><NavLink to={'/menu'}  className={({isActive}) => (isActive? 'active': "")}  id="menu">&#x2630;</NavLink></li>
+                <li><NavLink to={'/menu'}  className={({isActive}) => (isActive? 'active': "menu")}>&#x2630;</NavLink></li>
                 
             </ul>
         </header>
