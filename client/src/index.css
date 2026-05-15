@@ -23,14 +23,14 @@ main {
   text-align: center;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-
+  justify-content: flex-start;  
   width: 100vw;
-  height: auto;
+  height: 100vh;
 }
 *::-webkit-scrollbar{
   display: none;
 }
+
 
 .control,
 fieldset {
@@ -127,12 +127,10 @@ a{
   max-width: 100%;
 }
 
-/* Control row wraps nicely */
 .control-row {
   width: 100%;
 }
 
-/* ---------- TABLET (≤ 768px) ---------- */
 @media (max-width: 768px) {
   body {
     align-items: flex-start;
@@ -140,6 +138,7 @@ a{
 
   main {
     flex-direction: column;
+
   }
 
   .control-row {

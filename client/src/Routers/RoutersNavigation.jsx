@@ -56,6 +56,7 @@ export default function RoutesDefine() {
                         { path: "/search/:id", element: <Cardarea /> },
                     ]
                 },
+                
                 {
                     path: '/account', children: [
                         { index: true, element: 

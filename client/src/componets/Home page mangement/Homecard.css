@@ -1,6 +1,6 @@
 /* Card */
 #card {
-  position: relative; /* IMPORTANT */
+  position: relative; 
   width: auto;
   max-width: auto;
   height: 300px;
@@ -13,7 +13,7 @@
   border-radius: 20px;
   border: 2px solid white;
   cursor: pointer;
-  overflow: hidden; /* keeps overlay inside */
+  overflow: hidden; 
   
   background-color: green;
   transition: 0.3s ease;
@@ -34,7 +34,6 @@
   border-radius: 18px;
 }
 
-/* Overlay */
 #cardhover {
   position: absolute;
   top: 0;
@@ -60,4 +59,15 @@
 #cardhover:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
+}
+@media (max-width: 600px) {
+  #card{
+    height: 100px;
+  }
+}
+@media (max-width: 500px) {
+  #cardhover{
+    font-size: 6px;
+    
+  }
 }

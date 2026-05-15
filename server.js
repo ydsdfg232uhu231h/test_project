@@ -18,6 +18,11 @@ server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use("/api", authRoutes)
 server.use("/images", express.static(path.join(__dirname, "public/images")));
+
+server.use((req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 connectDB();
 server.get("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
@@ -60,7 +65,6 @@ server.get("/api/trends", async (req, res) => {
     res.status(500).json({ error: "Failed to fetch trends" });
   }
 });
-
 
 
 server.listen(port, () => {

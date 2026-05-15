@@ -1,8 +1,6 @@
 import { Link } from "react-router";
 import React from "react";
 import './MenuPage.css'
-import Searchbar from "../componets/Searchbar";
-import Logout  from "./LoginPage";
 export default function MenuPage(){
      const [isauth,setauth] = React.useState(false);
     const savedata = localStorage?.getItem('token');
@@ -16,7 +14,6 @@ export default function MenuPage(){
     },[])
     return (<>
         <ul id="ulmenu">
-            <li><Searchbar/></li>
             <li><Link to={'/home'}>Home</Link></li>
             <li><Link to={'/trends'}>Trends</Link></li>
             <li><Link to={"/profile"}>Profile</Link></li>

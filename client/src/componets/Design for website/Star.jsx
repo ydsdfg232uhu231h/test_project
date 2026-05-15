@@ -1,6 +1,6 @@
 function Star ({ percentage }) {
   const starStyle = {
-    fontSize: "50px",
+    fontSize: "5vw",
     display: "inline-block",
     background: `linear-gradient(90deg, #ffc107 ${percentage}%, #e4e5e9 ${percentage}%)`,
     WebkitBackgroundClip: "text",
