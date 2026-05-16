@@ -3,7 +3,7 @@ async function useHomeloader() {
 
             try {
                 const response = await fetch("https://test-project-gobd.onrender.com/api", {
-                    method: "GET",
+                    method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     }
@@ -12,6 +12,7 @@ async function useHomeloader() {
                     return;
                 }
                 const data = await response.json();
+                console.log(response)
                 const orderedData = [...data].sort((a, b) =>
                     a.name.localeCompare(b.name)
                 );

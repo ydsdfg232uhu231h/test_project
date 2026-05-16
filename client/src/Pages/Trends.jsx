@@ -26,7 +26,13 @@ export default function Trends() {
 
         try {
             // Replace with your actual proxy backend URL
-            const response = await fetch(`https://test-project-gobd.onrender.com/api/trends?q=${encodeURIComponent(query)}`);
+            const response = await fetch(`https://test-project-gobd.onrender.com/api/trends?q=${encodeURIComponent(query)}`,{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+
+            });
             const data = await response.json();
 
             // Format data for Chart.js

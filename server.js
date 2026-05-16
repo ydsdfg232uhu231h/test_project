@@ -19,12 +19,10 @@ server.use(express.urlencoded({extended: false}));
 server.use("/api", authRoutes)
 server.use("/images", express.static(path.join(__dirname, "public/images")));
 
-server.use((req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
+
 
 connectDB();
-server.get("/api", async(req, res) => {
+server.post("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
         console.log("Error ",err);
         
@@ -32,11 +30,15 @@ server.get("/api", async(req, res) => {
     
     res.json(JSON.parse(products))
 });
-server.post("/api", (req, res) => {
+server.get("/api", (req, res) => {
     console.log("my server")
 });
 
+
 server.get("/api/trends", async (req, res) => {
+  console.log("My server 2")
+});
+server.post("/api/trends", async (req, res) => {
   const { q } = req.query;
 
   if (!q) {
