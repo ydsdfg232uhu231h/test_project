@@ -19,7 +19,7 @@ server.use(express.urlencoded({extended: false}));
 server.use("/api", authRoutes)
 server.use("/images", express.static(path.join(__dirname, "public/images")));
 
-server.get("/*",(req, res) => {
+server.use((req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
