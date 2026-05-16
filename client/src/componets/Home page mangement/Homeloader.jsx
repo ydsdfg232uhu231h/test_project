@@ -12,7 +12,6 @@ async function useHomeloader() {
                     return;
                 }
                 const data = await response.json();
-                console.log(response)
                 const orderedData = [...data].sort((a, b) =>
                     a.name.localeCompare(b.name)
                 );

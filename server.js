@@ -12,6 +12,11 @@ const googleTrends = require("google-trends-api");
 
 const server = express();
 const port = process.env.PORT;
+
+// app.use((req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build", "index.html"));
+// });
+
 server.use(express.static(path.join(__dirname, "client/build")));
 server.use(cors());
 server.use(express.json());

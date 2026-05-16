@@ -263,8 +263,8 @@ li#mybar{
     position: fixed;
     top: 38px;
     border-radius: 5px;
-    font-size: 16px;
-    width: 70vw;
+    font-size: 10px;
+    width: 60vw;
     height: 10vh;
   }
   #searchresult li{
