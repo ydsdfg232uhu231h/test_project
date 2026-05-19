@@ -27,7 +27,7 @@ server.use("/images", express.static(path.join(__dirname, "public/images")));
 
 
 connectDB();
-server.post("/api", async(req, res) => {
+server.get("/api", async(req, res) => {
     const products = await readFile("./Data/available-meals.json",'utf8', (err) =>{
         console.log("Error ",err);
         
@@ -35,15 +35,15 @@ server.post("/api", async(req, res) => {
     
     res.json(JSON.parse(products))
 });
-server.get("/api", (req, res) => {
+server.post("/api", (req, res) => {
     console.log("my server")
 });
 
 
-server.get("/api/trends", async (req, res) => {
+server.post("/api/trends", async (req, res) => {
   console.log("My server 2")
 });
-server.post("/api/trends", async (req, res) => {
+server.get("/api/trends", async (req, res) => {
   const { q } = req.query;
 
   if (!q) {

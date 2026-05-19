@@ -3,7 +3,7 @@ async function useHomeloader() {
 
             try {
                 const response = await fetch("https://test-project-gobd.onrender.com/api", {
-                    method: "POST",
+                    method: "GET",
                     headers: {
                         "Content-Type": "application/json",
                     }
